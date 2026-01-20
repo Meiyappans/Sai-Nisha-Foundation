@@ -197,7 +197,7 @@ export default function Payment() {
                     }
                 }}
               >
-                {["500", "1000", "2500", "5000"].map((val) => (
+                {["500", "1000", "2500"].map((val) => (
                   <ToggleButton
                     key={val}
                     value={val}
