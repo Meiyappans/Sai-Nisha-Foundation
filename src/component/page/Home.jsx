@@ -143,7 +143,7 @@ export default function Home() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
 
-      <Box sx={{ position: "relative", backgroundColor: creamBg }}>
+      <Box sx={{ position: "relative", backgroundColor: creamBg , overflowX: "hidden" }}>
         
         <BubblesBackground />
 

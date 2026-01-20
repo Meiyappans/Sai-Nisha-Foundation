@@ -77,7 +77,7 @@ export default function Footer() {
               alignItems={{ xs: "center", md: "flex-end" }}
             >
               <Link component={RouterLink} to="/about">About Us</Link>
-              <Link component={RouterLink} to="/contactus">Contactus</Link>
+              <Link component={RouterLink} to="/contactus">Contact Us</Link>
               <Link component={RouterLink} to="/volunteer">Volunteer</Link>
               <Link component={RouterLink} to="/payment">Donate</Link>
               <Link component={RouterLink} to="/careers">Careers</Link>
