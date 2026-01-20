@@ -418,7 +418,25 @@ export default function Home() {
           }}
         >
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-  <Typography fontWeight={800} color="#1a1a1a">
+  <Typography
+    fontWeight={800}
+    color="#1a1a1a"
+    sx={{
+      fontSize: {
+        xs: "16px",  
+        sm: "18px",   
+        md: "18px",  
+      },
+      lineHeight: {
+        xs: 1.5,
+        md: 1.7,
+      },
+      px: {
+        xs: 1,
+        sm: 2,
+      },
+    }}
+  >
     <span style={{ color: "#2E7D32" }}>
       From a child’s first breath…
     </span>{" "}
@@ -434,6 +452,7 @@ export default function Home() {
     </span>
   </Typography>
 </motion.div>
+
         </Box>
 
         <Footer />
