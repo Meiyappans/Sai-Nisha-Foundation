@@ -4,7 +4,6 @@ import {
   Typography,
   Link,
   Stack,
-  Avatar,
   Grid,
 } from "@mui/material";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
@@ -14,19 +13,9 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import CloseIcon from "@mui/icons-material/Close";
 import { Link as RouterLink } from "react-router-dom";
-import { motion } from "framer-motion";
-
-const MotionBox = motion(Box);
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-
-  const avatarData = [
-    { img: "https://cdn-icons-png.flaticon.com/512/2909/2909764.png" },
-    { img: "https://cdn-icons-png.flaticon.com/512/616/616408.png" },
-    { img: "https://cdn-icons-png.flaticon.com/512/476/476863.png" },
-    { img: "https://cdn-icons-png.flaticon.com/512/857/857455.png" },
-  ];
 
   return (
     <Box
@@ -84,46 +73,6 @@ export default function Footer() {
             </Stack>
           </Grid>
         </Grid>
-      </Box>
-
-      {/* AVATARS */}
-      <Box
-        sx={{
-          maxWidth: 900,
-          mx: "auto",
-          display: "flex",
-          justifyContent: "center",
-          gap: { xs: 3, md: 6 },
-          flexWrap: "wrap",
-          mt: { xs: 2, md: "-200px" },
-          mb: 4,
-        }}
-      >
-        {avatarData.map((item, index) => (
-          <MotionBox
-            key={index}
-            animate={{ y: [0, -10, 0] }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              delay: index * 0.3,
-            }}
-            whileHover={{
-              scale: 1.15,
-              boxShadow: "0 0 25px rgba(76,175,80,0.6)",
-            }}
-          >
-            <Avatar
-              src={item.img}
-              sx={{
-                width: { xs: 70, md: 90 },
-                height: { xs: 70, md: 90 },
-                border: "3px solid #4CAF50",
-                backgroundColor: "#f5f5f5",
-              }}
-            />
-          </MotionBox>
-        ))}
       </Box>
 
       {/* BOTTOM SECTION */}

@@ -27,9 +27,9 @@ import "@fontsource/poppins/900.css";
 
 
 import heroImage from "../page/image/volunteers.png";
-import ngoImage1 from "../page/image/ladies.png";
-import ngoImage2 from "../page/image/newborn.png";
-import ngoImage3 from "../page/image/baby.png";
+import ngoImage1 from "../page/image/newborn-baby.jpg";
+import ngoImage2 from "../page/image/born child.png";
+import ngoImage3 from "../page/image/ladies.png";
 import ngoImage4 from "../page/image/kids education - 2.jpg";
 
 
@@ -395,6 +395,7 @@ export default function Home() {
                   width: "100%",
                   maxWidth: "450px",
                   borderRadius: 24,
+                  objectFit: "cover",
                   boxShadow: "0 35px 90px rgba(0,0,0,0.3)",
                 }}
                 variants={fadeRight}

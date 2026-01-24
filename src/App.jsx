@@ -93,7 +93,7 @@ export default function App() {
       {/* NAVBAR */}
       <AppBar position="sticky" sx={{ bgcolor: creamBg, color: navyText }}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
-          <img src={logo} alt="Logo" style={{ width: 120, height: 60 }} />
+          <img src={logo} alt="Logo" style={{ width: 150, height: 60 }} />
 
           {isMobile ? (
             <IconButton onClick={() => setOpenDrawer(true)}>

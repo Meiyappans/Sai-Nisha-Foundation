@@ -5,10 +5,10 @@ import {
   Container,
   useMediaQuery,
   CssBaseline,
+  keyframes, // Added for the spotlight effect
 } from "@mui/material";
 import { motion } from "framer-motion";
 import Footer from "../page/Footer";
-
 
 import "@fontsource/poppins/300.css";
 import "@fontsource/poppins/400.css";
@@ -18,12 +18,18 @@ import "@fontsource/poppins/700.css";
 import "@fontsource/poppins/800.css";
 import "@fontsource/poppins/900.css";
 
-
 const creamBg = "#F7F4EC";
 const navyText = "#1F2F3F";
 const olive = "#7C8F29";
 const gold = "#D68910";
 
+// Video Spotlight Effect Animation
+const spotlightMove = keyframes`
+  0% { transform: translate(-30%, -30%); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translate(130%, 130%); opacity: 0; }
+`;
 
 const fadeDown = {
   hidden: { opacity: 0, y: -50 },
@@ -42,6 +48,7 @@ const fadeUp = {
     transition: { duration: 0.9, ease: "easeOut" },
   },
 };
+
 function BubblesBackground() {
   return (
     <Box
@@ -129,22 +136,44 @@ export default function Events() {
           }}
         />
         <BubblesBackground />
+
+        {/* ================= HEADER WITH VIDEO SPOTLIGHT EFFECT ================= */}
         <Box
           sx={{
-            background: `linear-gradient(135deg, ${navyText}, #0E1624)`,
+            background: "#0a0f1a", // Deep dark background like the video
             color: "#fff",
-            py: isMobile ? 7 : 10,
+            py: isMobile ? 10 : 14,
             textAlign: "center",
             px: 2,
             boxShadow: "0 25px 80px rgba(0,0,0,0.5)",
             position: "relative",
             zIndex: 2,
             overflow: "hidden",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
+          {/* Moving Spotlight Light Source */}
+          <Box
+            sx={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "40%",
+              height: "100%",
+              background: "radial-gradient(circle at center, rgba(214, 137, 16, 0.3) 0%, transparent 70%)",
+              filter: "blur(60px)",
+              zIndex: 0,
+              animation: `${spotlightMove} 7s infinite ease-in-out`,
+            }}
+          />
+
+          {/* Glint/Shine Animation Layer */}
           <motion.div
-            animate={{ x: ["-30%", "130%"] }}
-            transition={{ duration: 10, repeat: Infinity }}
+            animate={{ x: ["-100%", "200%"] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
             style={{
               position: "absolute",
               top: 0,
@@ -152,39 +181,53 @@ export default function Events() {
               width: "30%",
               height: "100%",
               background:
-                "linear-gradient(120deg, transparent, rgba(255,255,255,0.15), transparent)",
+                "linear-gradient(120deg, transparent, rgba(255,255,255,0.08), transparent)",
+              zIndex: 1,
             }}
           />
 
-          <motion.div variants={fadeDown} initial="hidden" animate="visible">
+          <motion.div 
+            variants={fadeDown} 
+            initial="hidden" 
+            animate="visible"
+            style={{ position: "relative", zIndex: 2 }}
+          >
             <Typography
               sx={{
-                fontSize: { xs: 26, md: 42 },
+                fontSize: { xs: 32, md: 52 }, // Slightly larger like the video
                 fontWeight: 900,
-                letterSpacing: "0.2em",
+                letterSpacing: "0.25em",
                 textTransform: "uppercase",
-                color: gold,
+                color: "#FFFFFF",
               }}
             >
-              Events
+              Our <span style={{ color: gold }}>Events</span>
             </Typography>
 
             <Typography
               mt={2}
-              fontSize={{ xs: 14, md: 17 }}
-              opacity={0.9}
-              color="#F7F4EC"
+              fontSize={{ xs: 15, md: 18 }}
+              sx={{
+                opacity: 0.85,
+                color: "#F7F4EC",
+                maxWidth: "700px",
+                mx: "auto",
+                fontWeight: 500,
+              }}
             >
               Curated volunteering opportunities to create meaningful impact
             </Typography>
 
             <Typography
-              mt={1}
+              mt={3}
               fontSize={13}
-              opacity={0.85}
-              letterSpacing="0.2em"
-              textTransform="uppercase"
-              color={olive}
+              sx={{
+                opacity: 0.7,
+                letterSpacing: "0.5em", // Wide spacing from video
+                textTransform: "uppercase",
+                color: olive,
+                fontWeight: 700,
+              }}
             >
               Explore • Participate • Grow
             </Typography>
