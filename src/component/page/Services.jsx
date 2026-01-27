@@ -22,7 +22,7 @@ import "@fontsource/poppins/700.css";
 import "@fontsource/poppins/800.css";
 import "@fontsource/poppins/900.css";
 
-import serviceImg1 from "./image/kids education - 1.jpg";
+import serviceImg1 from "./image/pre emergency.png";
 import serviceImg2 from "./image/pets - 1.jpg";
 import serviceImg3 from "./image/mentally challenged elders.webp";
 import serviceImg4 from "./image/newborn-baby.jpg";
